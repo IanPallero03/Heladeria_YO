@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="shortcut icon" href="imagenes/logo.webp" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heladeria Yo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div id="inicio"></div>
+  <a href="#inicio" class="flecha-arriba">&uarr;</a>
+
+  <section id="carousel" class="carousel animado">
+
+    <header class="logo-header">
+      <div class="logo-container">
+        <img src="imagenes/logo.webp" alt="Logo de la cafetería">
+        <p class="logo-texto">YO HELADERÍAS</p>
+      </div>
+    </header>
+    <div class="carousel">
+   <button class="prev">&#10094;</button>
+   
+   <div class="carousel-track-container">
+     <ul class="carousel-track">
+ 
+       <li class="carousel-slide current-slide"><img src="imagenes/portada.webp" alt="portada"><div class="texto-encima2">¡Nada como un cafecito con medialunas!</div>
+       <div class="texto-encima">Vení a nuestras cafeterias a disfrutar del mejor café para hacer de tu dia un gran día.</div></li>
+ 
+       <li class="carousel-slide"><img src="imagenes/portada2.webp" alt="portada2"><div class="texto-encima3">¡Acompañate de un buen helado!</div>
+       <div class="texto-encima4">Descubre el sabor de la felicidad en cada cucharada.</div></li>
+ 
+       <li class="carousel-slide"><img src="imagenes/portada3.webp" alt="portada3"><div class="texto-encima5">¡Disfruta del mejor café para llevar!</div>
+ 
+       <div class="texto-encima6">Ya sea que estés de camino al trabajo, a una reunión o simplemente quieras darte un gusto mientras paseas,
+        nuestro café es la opción perfecta para ponerte en marcha.</div></li>
+     </ul>
+   </div>
+   <button class="next">&#10095;</button>
+ </div>
+ 
+</section>
+<script>
+ const track = document.querySelector('.carousel-track');
+ const slides = Array.from(track.children);
+ const nextButton = document.querySelector('.next');
+ const prevButton = document.querySelector('.prev');
+ let currentIndex = 0;
+
+ function updateSlide(position) {
+   const container = document.querySelector('.carousel-track-container');
+   const slideWidth = container.clientWidth;
+   track.style.transform = 'translateX(-' + (slideWidth * position) + 'px)';
+ }
+
+ // Avanzar con flechas
+ nextButton.addEventListener('click', () => {
+   currentIndex = (currentIndex + 1) % slides.length;
+   updateSlide(currentIndex);
+ });
+
+ prevButton.addEventListener('click', () => {
+   currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+   updateSlide(currentIndex);
+ });
+
+ // 🚀 Cambio automático cada 4 segundos
+ setInterval(() => {
+   currentIndex = (currentIndex + 1) % slides.length;
+   updateSlide(currentIndex);
+ }, 20000); // 4000 milisegundos = 4 segundos
+
+ // Asegura que inicie en la posición correcta
+ window.addEventListener('load', () => {
+   updateSlide(0);
+ });
+</script>
+
+  <!-- ======= MENÚ CÍRCULOS ======= -->
+<nav class="menu-circulos">
+  <a href="#inicio" class="icono-link" title="Inicio">
+    <div class="icono-circulo">
+      <img src="imagenes/icons8-heladería-64.webp" alt="Inicio">
+    </div>
+    <p>INICIO</p>
+  </a>
+
+  <a href="#Recomendados" class="icono-link" title="Recomendados">
+    <div class="icono-circulo">
+      <img src="imagenes/cupcake.webp" alt="Recomendados">
+    </div>
+    <p>RECOMENDADOS</p>
+  </a>
+
+  <a href="#busqueda" class="icono-link" title="Búsqueda">
+    <div class="icono-circulo">
+      <img src="imagenes/scan-search.webp" alt="Búsqueda">
+    </div>
+    <p>BÚSQUEDA</p>
+  </a>
+
+  <a href="#promos" class="icono-link" title="Promos">
+    <div class="icono-circulo">
+      <img src="imagenes/icons8-descuento-50.webp" alt="Promos">
+    </div>
+    <p>PROMOS</p>
+  </a>
+
+  <a href="#Cafeteria" class="icono-link" title="Cafetería">
+    <div class="icono-circulo">
+      <img src="imagenes/icons8-cafeteria-24.webp" alt="Cafetería">
+    </div>
+    <p>CAFETERÍA</p>
+  </a>
+
+  <a href="#Acompañamiento" class="icono-link" title="Complemento">
+    <div class="icono-circulo">
+      <img src="imagenes/cake-slice.webp" alt="Complemento">
+    </div>
+    <p>COMPLEMENTO</p>
+  </a>
+
+  <a href="#Helados" class="icono-link" title="Helados">
+    <div class="icono-circulo">
+      <img src="imagenes/icons8-helado-kawaii-50.webp" alt="Helados">
+    </div>
+    <p>HELADOS</p>
+  </a>
+
+  <a href="#postres" class="icono-link" title="Postres">
+    <div class="icono-circulo">
+      <img src="imagenes/cake-slice.webp" alt="Postres">
+    </div>
+    <p>POSTRES</p>
+  </a>
+
+  <a href="#potes" class="icono-link" title="Potes">
+    <div class="icono-circulo">
+      <img src="imagenes/icons8-helado-32.webp" alt="Potes">
+    </div>
+    <p>POTES</p>
+  </a>
+
+  <a href="#sabores" class="icono-link" title="Sabores">
+    <div class="icono-circulo">
+      <img src="imagenes/icecream.webp" alt="Sabores">
+    </div>
+    <p>SABORES</p>
+  </a>
+
+  <a href="#Contacto" class="icono-link" title="Contacto">
+    <div class="icono-circulo">
+      <img src="imagenes/phone-book.webp" alt="Contacto">
+    </div>
+    <p>CONTACTO</p>
+  </a>
+</nav>
+
+
+
+<!-- Sección de recomendados -->
+<section id="Recomendados">
+    <div class="texto-productos">Lo que te recomendamos</div>
+    
+     <div class="slider">
+      <div class="slide-track animado">
+        
+        <div class="slide"><img src="imagenes/cafe-slider.webp" alt="cafe-grande">
+        <p class="descripcion-slide">Café grande</p>
+        <a href="#cafe-grande" class="descubrir">Descubrí más</a></div>
+    
+        <div class="slide"><img src="imagenes/cafe-llevar-slider.webp" alt="cafe-llevar">
+        <p class="descripcion-slide">Café para llevar</p>
+        <a href="#cafe-llevar" class="descubrir">Descubrí más</a></div>
+    
+        <div class="slide"><img src="imagenes/submarino-slider.webp" alt="submarino">
+        <p class="descripcion-slide">Submarino</p>
+        <a href="#submarino" class="descubrir">Descubrí más</a></div>
+
+        <div class="slide"><img src="imagenes/medialunas-slider.webp" alt="medialunas">
+          <p class="descripcion-slide">Medialunas</p>
+          <a href="#medialunas" class="descubrir">Descubrí más</a></div>
+
+        <div class="slide"><img src="imagenes/cheescake_frutos.webp" alt="cheescake_frutos">
+            <p class="descripcion-slide">Porción de Torta</p>
+            <a href="#cheescake_frutos" class="descubrir">Descubrí más</a></div>
+    
+        <div class="slide"><img src="imagenes/fresh-slider.webp" alt="trago-fresh">
+            <p class="descripcion-slide">Trago Fresh</p>
+            <a href="#trago-fresh" class="descubrir">Descubrí más</a></div>
+    
+        <!-- Repite las mismas para un bucle continuo -->
+        <div class="slide"><img src="imagenes/cafe-slider.webp" alt="cafe-grande">
+          <p class="descripcion-slide">Café grande</p>
+          <a href="#cafe-grande" class="descubrir">Descubrí más</a></div>
+      
+          <div class="slide"><img src="imagenes/cafe-llevar-slider.webp" alt="cafe-llevar">
+          <p class="descripcion-slide">Café para llevar</p>
+          <a href="#cafe-llevar" class="descubrir">Descubrí más</a></div>
+      
+          <div class="slide"><img src="imagenes/submarino-slider.webp" alt="submarino">
+          <p class="descripcion-slide">Submarino</p>
+          <a href="#submarino" class="descubrir">Descubrí más</a></div>
+  
+          <div class="slide"><img src="imagenes/medialunas-slider.webp" alt="medialunas">
+            <p class="descripcion-slide">Medialunas</p>
+            <a href="#medialunas" class="descubrir">Descubrí más</a></div>
+  
+          <div class="slide"><img src="imagenes/cheescake_frutos.webp" alt="cheescake_frutos">
+              <p class="descripcion-slide">Cheesecake de frutos</p>
+              <a href="#cheescake_frutos" class="descubrir">Descubrí más</a></div>
+      
+          <div class="slide"><img src="imagenes/fresh-slider.webp" alt="trago-fresh">
+              <p class="descripcion-slide">Trago Fresh</p>
+              <a href="#trago-fresh" class="descubrir">Descubrí más</a></div>
+      </div>
+    </div>
+
+    <!-- buscador -->
+    <section id="busqueda" class="buscador animado">
+    <div class="busqueda">¿Te interesa algo en especifico?</div>
+    <div class="buscador-contenedor">
+      <input type="text" id="buscador" placeholder="Buscar productos..." />
+    </div>
+  </section>
+    <hr class="separador">
+
+    <!-- Seccion promos -->
+    <section id="promos" class="promos animado">
+      <h2 class="titulo-promo">Nuestras Promos</h2>
+    
+      <div class="promo-box">
+        <img src="imagenes/Desayuno.webp" alt="Desayuno" class="promo-img">
+    
+        <div class="promo-texto">
+          <h3>Desayuno / Merienda</h3>
+          <ul>
+            <li>Café a tu gusto</li>
+            <li>2 medialunas(dulces o saladas)</li>
+            <li>Jugo de naranja</li>
+          </ul>
+          <p class="precio">$4500</p>
+        </div>
+      </div>
+
+      <div class="promo-box">
+        <img src="imagenes/pexels-photo-7509692.webp" alt="Desayuno" class="promo-img">
+    
+        <div class="promo-texto">
+          <h3>Desayuno / Merienda</h3>
+          <ul>
+            <li>Café a tu gusto</li>
+            <li>3 tostadas con mermelada y queso</li>
+            <li>Jugo de naranja</li>
+          </ul>
+          <p class="precio">$4500</p>
+        </div>
+      </div>
+
+      <div class="promo-box">
+        <img src="imagenes/1kg.webp" alt="Desayuno" class="promo-img">
+    
+        <div class="promo-texto">
+          <h3>Dos kilos</h3>
+          <ul>
+            <li>Sabores a elección</li>
+          </ul>
+          <p class="precio">$27500</p>
+        </div>
+      </div>
+
+
+    </section>
+
+    <hr class="separador">
+
+    <!-- Seccion cafeteria -->
+
+    
+
+    <section id="Cafeteria" class="Cafeteria">
+      <h2 class="titulo-cafeteria">Cafetería</h2>
+    
+      <!-- Producto 1 -->
+      <div class="Cafeteria-box animado">
+        <img src="imagenes/cafe_chico.webp" alt="Café chico" class="Cafeteria-img">
+    
+        <div class="cafeteria-texto">
+          <h4>Café chico</h4>
+          <ul>
+            <li>Café con leche</li>
+            <li>Café cortado</li>
+            <li>Lágrima</li>
+          </ul>   
+          <p class="precio">$2500</p>       
+        </div>
+      </div>
+    
+      <!-- Producto 2 -->
+      <div class="Cafeteria-box animado">
+        <img src="imagenes/cafe_jarra.webp" alt="Café mediano" class="Cafeteria-img">
+    
+        <div class="cafeteria-texto">
+          <h4>Café mediano</h4>
+          <ul>
+            <li>Café con leche</li>
+            <li>Café cortado</li>
+            <li>Lágrima</li>
+          </ul>  
+          <p class="precio">$3000</p> 
+        </div>
+      </div>
+
+      <!-- Producto 3 -->
+      <div id="cafe-grande" class="Cafeteria-box animado">
+        <img src="imagenes/cafe_grande.webp" alt="Café grande" class="Cafeteria-img">
+    
+        <div class="cafeteria-texto">
+          <h4>Café grande</h4>
+          <ul>
+            <li>Café con leche</li>
+            <li>Café cortado</li>
+            <li>Lágrima</li>
+          </ul>  
+          <p class="precio">$3500</p> 
+        </div>
+      </div>
+
+      <!-- Producto 4 -->
+      <div id="submarino" class="Cafeteria-box animado">
+        <img src="imagenes/submarino.webp" alt="submarino" class="Cafeteria-img">
+    
+        <div class="cafeteria-texto">
+          <h4>Submarino</h4>
+          <ul>
+            <li>Leche caliente</li>
+            <li>Barra de chocolate</li>
+            <li>Baño de salsa de chocolate</li>
+          </ul>
+          <p class="precio">$4000</p>
+        </div>
+      </div>
+
+       <!-- Producto 5 -->
+       <div class="Cafeteria-box animado">
+        <img src="imagenes/Copa-capusino.webp" alt="cappuccino" class="Cafeteria-img">
+    
+        <div class="cafeteria-texto">
+          <h4>Cappuccino</h4>
+          <ul>
+            <li>Espresso</li>
+            <li>Leche vaporizada</li>
+            <li>Espuma de leche</li>
+          </ul>
+          <p class="precio">$4000</p>   
+        </div>
+      </div>
+
+      <!-- Producto 6 -->
+      <div class="Cafeteria-box animado">
+        <img src="imagenes/Cafe-Frio.webp" alt="cafehelado" class="Cafeteria-img">
+    
+        <div class="cafeteria-texto">
+          <h4>Café frío</h4>
+          <ul>
+            <li>4 bochas de helado (sabor a elección)</li>
+            <li>2 cucharadas de café</li>
+            <li>Leche y azúcar</li>
+          </ul>    
+          <p class="precio">$5000</p>      
+        </div>
+      </div>
+
+      <!-- Producto 7 -->
+      <div class="Cafeteria-box animado">
+        <img src="imagenes/Milkshake.webp" alt="milkshake" class="Cafeteria-img">
+    
+        <div class="cafeteria-texto">
+          <h4>Milkshake</h4>
+          <ul>
+            <li>4 bochas de helado (sabor a elección)</li>
+            <li>Leche fría</li>
+          </ul>    
+          <p class="precio">$5000</p>      
+        </div>
+      </div>
+
+      <!-- Producto 8 -->
+      <div id="trago-fresh" class="Cafeteria-box animado">
+        <img src="imagenes/trago-fresh.webp" alt="trago fresh" class="Cafeteria-img">
+    
+        <div class="cafeteria-texto">
+          <h4>Trago fresh</h4>
+          <ul>
+            <li>2 bochas de helado al agua (sabor a elección)</li>
+            <li>Batido con agua</li>
+          </ul>     
+          <p class="precio">$4000</p>      
+        </div>
+      </div>
+
+
+      <!-- Producto 9 -->
+      <div id="cafe-llevar" class="Cafeteria-box animado">
+        <img src="imagenes/cafe-jarrita.webp" alt="cafe jarrita" class="Cafeteria-img">
+    
+        <div class="cafeteria-texto">
+          <h4>Café jarrita para llevar</h4>
+          <ul>
+            <li>Café con leche</li>
+            <li>Café cortado</li>
+            <li>Lágrima</li>
+          </ul>
+          <p class="precio">$3300</p> 
+        </div>
+      </div>
+
+       <!-- Producto 10 -->
+       <div class="Cafeteria-box animado">
+        <img src="imagenes/cafe_para_llevar.webp" alt="cafe para llevar" class="Cafeteria-img">
+    
+        <div class="cafeteria-texto">
+          <h4>Café grande para llevar</h4>
+          <ul>
+            <li>Café con leche</li>
+            <li>Café cortado</li>
+            <li>Lágrima</li>
+          </ul>
+          <p class="precio">$3800</p> 
+        </div>
+      </div>
+
+      <!-- Producto 11 -->
+      <div class="Cafeteria-box animado">
+        <img src="imagenes/coca_cola.webp" alt="coca_cola" class="Cafeteria-img">
+    
+        <div class="cafeteria-texto">
+          <h4>Coca Cola</h4>
+          <ul>
+            <li>Botella de 500 ml</li>
+          </ul>       
+          <p class="precio">$2500</p>   
+        </div>
+      </div>
+
+       <!-- Producto 12 -->
+       <div class="Cafeteria-box animado">
+        <img src="imagenes/Sprite.webp" alt="Sprite" class="Cafeteria-img">
+    
+        <div class="cafeteria-texto">
+          <h4>Sprite</h4>
+          <ul>
+            <li>Botella de 500 ml</li>
+          </ul>      
+          <p class="precio">$2500</p>       
+        </div>
+      </div>
+
+      <!-- Producto 13 -->
+      <div class="Cafeteria-box animado">
+        <img src="imagenes/fanta.webp" alt="fanta" class="Cafeteria-img">
+    
+        <div class="cafeteria-texto">
+          <h4>Fanta</h4>
+          <ul>
+            <li>Botella de 500 ml</li>
+          </ul>     
+          <p class="precio">$2500</p>        
+        </div>
+      </div>
+
+      <!-- Producto 14 -->
+      <div class="Cafeteria-box animado">
+        <img src="imagenes/vida.webp" alt="vida" class="Cafeteria-img">
+    
+        <div class="cafeteria-texto">
+          <h4>Agua saborizada Vida</h4>
+          <ul>
+            <li>Botella de 500 ml</li>
+          </ul>      
+          <p class="precio">$2500</p>       
+        </div>
+      </div>
+
+      <!-- Producto 15 -->
+      <div class="Cafeteria-box animado">
+        <img src="imagenes/agua.webp" alt="agua" class="Cafeteria-img">
+    
+        <div class="cafeteria-texto">
+          <h4>Agua Mineral</h4>
+          <ul>
+            <li>Botella de 500 ml</li>
+          </ul>     
+          <p class="precio">$1500</p>        
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ACOMPAÑAMIENTO -->
+  
+    <hr class="separador">
+
+    <section id="Acompañamiento" class="Cafeteria animado">
+      <h2 class="titulo-cafeteria">Complemento</h2>
+    
+    
+      <!-- Producto 1 -->
+      <div id="medialunas" class="Cafeteria-box animado">
+        <img src="imagenes/Medialunas.webp" alt="Medialunas" class="Cafeteria-img">
+        <div class="cafeteria-texto">
+          <h4>Medialunas</h4>
+          <ul>
+            <li>Dulces o saladas</li>
+          </ul>       
+          <p class="precio">$1200</p>
+        </div>
+      </div>
+
+      <!-- Producto 2 -->
+      <div class="Cafeteria-box animado">
+        <img src="imagenes/waffles_helado2.webp" alt="waffles_helado" class="Cafeteria-img">
+    
+        <div class="cafeteria-texto">
+          <h4>Waffles con helado</h4>
+          <ul>
+            <li>Waffles con dulce de leche</li>
+            <li>2 bochas de helado (a elección)</li>
+          </ul> 
+          <p class="precio">$7000</p>         
+        </div>
+      </div>
+
+
+      <!-- Producto 3 -->
+      <div class="Cafeteria-box animado">
+        <img src="imagenes/waffles.webp" alt="waffles" class="Cafeteria-img">
+    
+        <div class="cafeteria-texto">
+          <h4>Waffles</h4>
+          <ul>
+            <li>Waffles tibios</li>
+            <li>Acompañados con dulce de leche</li>
+          </ul>    
+          <p class="precio">$5000</p>       
+        </div>
+      </div>
+
+      
+      <!-- Producto 4 -->
+      <div class="Cafeteria-box animado">
+        <img src="imagenes/panqueques.webp" alt="panqueques" class="Cafeteria-img">
+    
+        <div class="cafeteria-texto">
+          <h4>Panqueques</h4>
+          <ul>
+            <li>Con dulce de leche</li>
+            <li>O acompañados con helado</li>
+          </ul>     
+          <p class="precio">$6000</p> 
+          <p class="precio-entero">$4000</p>      
+        </div>
+      </div>
+
+      <!-- Producto 5 -->
+      <div class="Cafeteria-box animado">
+        <img src="imagenes/pastel.webp" alt="pastel" class="Cafeteria-img">
+    
+        <div class="cafeteria-texto">
+          <h4>Pastel de Chocolate</h4>
+          <ul>
+            <li>Bizcochuelo de chocolate húmedo con almíbar</li>
+            <li>Relleno de crema de chocolate y dulce de leche</li>
+            <li>Cubierto con ganache, mousse de chocolate y cerezas</li>
+          </ul> 
+          <p class="precio">$7500</p>  
+          <p class="precio-entero">$48000</p>           
+        </div>
+      </div>
+
+      <!-- Producto 6 -->
+      <div id="cheescake_frutos"  class="Cafeteria-box animado">
+        <img src="imagenes/chess_frutos.webp" alt="cheescake_frutos" class="Cafeteria-img">
+    
+        <div class="cafeteria-texto">
+          <h4>Cheescake de Frutos</h4>
+          <ul>
+            <li>Base de masa sablé de vainilla</li>
+            <li>Relleno queso crema</li>
+            <li>Cubierto con abundantes frutos rojos</li>
+          </ul>
+          <p class="precio">$7500</p> 
+          <p class="precio-entero">$48000</p>   
+        </div>
+      </div>
+
+      <!-- Producto 7 -->
+      <div class="Cafeteria-box animado">
+        <img src="imagenes/Cheescake_frutilla.webp" alt="Cheescake_frutilla" class="Cafeteria-img">
+    
+        <div class="cafeteria-texto">
+          <h4>Cheescake de Frutilla</h4>
+          <ul>
+            <li>Masa sablé de vainilla decorada con crema chantilly</li>
+            <li>Relleno de queso crema saborizada con frutilla</li>
+            <li>Cubierta con jalea de frutillas y crema chantilly</li>
+          </ul> 
+          <p class="precio">$7500</p>    
+          <p class="precio-entero">$48000</p>         
+        </div>
+      </div>
+
+      <!-- Producto 8 -->
+      <div class="Cafeteria-box animado">
+        <img src="imagenes/Oreo.webp" alt="Oreo" class="Cafeteria-img">
+    
+        <div class="cafeteria-texto">
+          <h4>Oreo</h4>
+          <ul>
+            <li>Base de galletitas Oreo con manteca</li>
+            <li>Relleno de dulce de leche y crema de Oreo</li>
+            <li>Cubierta con Oreo procesada y decorada con crema chantilly</li>
+          </ul>  
+          <p class="precio">$7500</p>    
+          <p class="precio-entero">$48000</p>        
+        </div>
+      </div>
+
+      <!-- Producto 9 -->
+      <div class="Cafeteria-box animado">
+        <img src="imagenes/Rogel.webp" alt="Rogel" class="Cafeteria-img">
+    
+        <div class="cafeteria-texto">
+          <h4>Rogel</h4>
+          <ul>
+            <li>Capas de masa filo rellenas con dulce de leche</li>
+            <li>Cubierto con merengue suizo en copitos</li>
+          </ul>   
+          <p class="precio">$7500</p>  
+          <p class="precio-entero">$45000</p>         
+        </div>
+      </div>
+
+      <!-- Producto 10 -->
+      <div class="Cafeteria-box animado">
+        <img src="imagenes/Tarta_bombon.webp" alt="Tarta bombon" class="Cafeteria-img">
+    
+        <div class="cafeteria-texto">
+          <h4>Tarta de Bombón</h4>
+          <ul>
+            <li>Masa sablé de vainilla</li>
+            <li>Rellena con abundante dulce de leche y crema chantilly</li>
+            <li>Cubierta con ganache y decorada con crema</li>
+          </ul> 
+          <p class="precio">$7500</p>     
+          <p class="precio-entero">$48000</p>        
+        </div>
+      </div>
+
+       <!-- Producto 11 -->
+       <div class="Cafeteria-box animado">
+        <img src="imagenes/Chaja.webp" alt="Chaja" class="Cafeteria-img">
+    
+        <div class="cafeteria-texto">
+          <h4>Chajá</h4>
+          <ul>
+            <li>Bizcochuelo de vainilla con almíbar</li>
+            <li>Relleno de dulce de leche, duraznos, chantilly y merengue</li>
+            <li>Decorado con crema chantilly y cerezas</li>
+          </ul> 
+          <p class="precio">$7500</p> 
+          <p class="precio-entero">$48000</p>            
+        </div>
+      </div>
+
+       <!-- Producto 12 -->
+       <div class="Cafeteria-box animado">
+        <img src="imagenes/Lemon_pie.webp" alt="Lemon_pie" class="Cafeteria-img">
+    
+        <div class="cafeteria-texto">
+          <h4>Lemon Pie</h4>
+          <ul>
+            <li>Base de masa sablé de limón</li>
+            <li>Relleno con crema de limón casera</li>
+            <li>Cubierto con merengue suizo</li>
+          </ul>  
+          <p class="precio">$7500</p>  
+          <p class="precio-entero">$42000</p>          
+        </div>
+      </div>
+
+      <!-- Producto 13 -->
+      <div class="Cafeteria-box animado">
+        <img src="imagenes/Chocolina.webp" alt="Chocolina" class="Cafeteria-img">
+    
+        <div class="cafeteria-texto">
+          <h4>Chocolina</h4>
+          <ul>
+            <li>Capas de galletitas Chocolinas humedecidas en café</li>
+            <li>Relleno de mousse de dulce de leche</li>
+            <li>Decorado con más mousse y galletitas</li>
+          </ul> 
+          <p class="precio">$7500</p>
+          <p class="precio-entero">$48000</p>             
+        </div>
+      </div>
+
+      <!-- Producto 14 -->
+      <div class="Cafeteria-box animado">
+        <img src="imagenes/Choco_oreo.webp" alt="Choco_oreo" class="Cafeteria-img">
+    
+        <div class="cafeteria-texto">
+          <h4>Choco Oreo</h4>
+          <ul>
+            <li>Base de Oreo, rellena con mousse de dulce de leche y trozos de Oreo</li>
+            <li>Cubierta con ganache de chocolate</li>
+            <li>Decorada con crema chantilly y más Oreos</li>
+          </ul>  
+          <p class="precio">$7500</p> 
+          <p class="precio-entero">$48000</p>           
+        </div>
+      </div>
+
+      <!-- Producto 15 -->
+      <div class="Cafeteria-box animado">
+        <img src="imagenes/Pirineos.webp" alt="Pirineos" class="Cafeteria-img">
+    
+        <div class="cafeteria-texto">
+          <h4>Pirineos</h4>
+          <ul>
+            <li>Bizcochuelo de chocolate con almíbar</li>
+            <li>Capa de dulce de leche, crema chantilly</li>
+            <li>Decorado con merengue suizo y hilos de chocolate</li>
+          </ul>   
+          <p class="precio">$7500</p>
+          <p class="precio-entero">$45000</p>           
+        </div>
+      </div>
+
+      <!-- Producto 16-->
+      <div class="Cafeteria-box animado">
+        <img src="imagenes/tarta_frutilla.webp" alt="tarta_frutilla" class="Cafeteria-img">
+    
+        <div class="cafeteria-texto">
+          <h4>Tarta de Frutilla</h4>
+          <ul>
+            <li>Masa sablé</li>
+            <li>Rellena de dulce de leche y crema chantilly</li>
+            <li>Cubierta con frutillas frescas</li>
+          </ul>   
+          <p class="precio">$7500</p>     
+          <p class="precio-entero">$48000</p>      
+        </div>
+      </div>
+
+      <!-- Producto 17-->
+      <div class="Cafeteria-box animado">
+        <img src="imagenes/tiramisu.webp" alt="tiramisu" class="Cafeteria-img">
+    
+        <div class="cafeteria-texto">
+          <h4>Tiramisu</h4>
+          <ul>
+            <li>Base de láminas de bizcochitos de vainilla</li>
+            <li>café</li>
+            <li>Crema de queso mascarpone</li>
+            <li>yema de huevo, y cacao en polvo</li>
+          </ul>
+          <p class="precio">$7500</p>   
+          <p class="precio-entero">$48000</p>             
+        </div>
+      </div>
+
+    </section>
+
+
+
+<!-- seccion HELADOS -->
+    <section id="Helados" class="Cafeteria animado">
+      <h2 class="titulo-cafeteria">Helados Clásicos</h2>
+    
+    
+      <!-- Producto 1 -->
+      <div class="Cafeteria-box animado">
+        <img src="imagenes/1kg.webp" alt="Helado 1 kg" class="Cafeteria-img">
+        <div class="cafeteria-texto">
+          <h4>Helado de 1 kilo</h4>
+          <ul>
+            <li>Sabores a elección</li>
+          </ul>       
+          <p class="precio">$15000</p>
+        </div>
+      </div>
+      <!-- Producto 2 -->
+      <div class="Cafeteria-box animado">
+        <img src="imagenes/mediokilo.webp" alt="Helado 1/2kilo" class="Cafeteria-img">
+        <div class="cafeteria-texto">
+          <h4>Helado de 1/2 kilo</h4>
+          <ul>
+            <li>Sabores a elección</li>
+          </ul>       
+          <p class="precio">$9000</p>
+        </div>
+      </div>
+
+       <!-- Producto 3 -->
+       <div class="Cafeteria-box animado">
+        <img src="imagenes/uncuarto.webp" alt="Helado 1/4kilo" class="Cafeteria-img">
+        <div class="cafeteria-texto">
+          <h4>Helado de 1/4 kilo</h4>
+          <ul>
+            <li>Sabores a elección</li>
+          </ul>       
+          <p class="precio">$5500</p>
+        </div>
+      </div>
+
+       <!-- Producto 4 -->
+       <div class="Cafeteria-box animado">
+        <img src="imagenes/Cono-simple-1.webp" alt="Cono-simple" class="Cafeteria-img">
+        <div class="cafeteria-texto">
+          <h4>Cono Simple</h4>
+          <ul>
+            <li>Sabores a elección</li>
+          </ul>       
+          <p class="precio">$3000</p>
+        </div>
+      </div>
+
+       <!-- Producto 5 -->
+       <div class="Cafeteria-box animado">
+        <img src="imagenes/Cono-doble-1.webp" alt="Cono-doble" class="Cafeteria-img">
+        <div class="cafeteria-texto">
+          <h4>Cono Doble</h4>
+          <ul>
+            <li>Sabores a elección</li>
+          </ul>       
+          <p class="precio">$4500</p>
+        </div>
+      </div>
+
+      <!-- Producto 6 -->
+      <div class="Cafeteria-box animado">
+        <img src="imagenes/Cono-triple.webp" alt="Cono-triple" class="Cafeteria-img">
+        <div class="cafeteria-texto">
+          <h4>Cono Triple</h4>
+          <ul>
+            <li>Sabores a elección</li>
+          </ul>       
+          <p class="precio">$5500</p>
+        </div>
+      </div>
+
+      <!-- Producto 7 -->
+      <div class="Cafeteria-box animado">
+        <img src="imagenes/Cucurucho-2-gustos.webp" alt="Cucurucho-2-gustos" class="Cafeteria-img">
+        <div class="cafeteria-texto">
+          <h4>Cucurucho de 2 gustos</h4>
+          <ul>
+            <li>Sabores a elección</li>
+          </ul>       
+          <p class="precio">$4500</p>
+        </div>
+      </div>
+
+      <!-- Producto 8 -->
+      <div class="Cafeteria-box animado">
+        <img src="imagenes/Cucurucho-3-gustos.webp" alt="Cucurucho-3-gustos" class="Cafeteria-img">
+        <div class="cafeteria-texto">
+          <h4>Cucurucho de 3 gustos</h4>
+          <ul>
+            <li>Sabores a elección</li>
+          </ul>       
+          <p class="precio">$5500</p>
+        </div>
+      </div>
+
+      <!-- Producto 9 -->
+      <div class="Cafeteria-box animado">
+        <img src="imagenes/Vaso-plastico.webp" alt="Vaso-plastico" class="Cafeteria-img">
+        <div class="cafeteria-texto">
+          <h4>Vaso de plastico de 3 gustos</h4>
+          <ul>
+            <li>Sabores a elección</li>
+          </ul>       
+          <p class="precio">$5500</p>
+        </div>
+      </div>
+
+      <!-- Producto 10 -->
+      <div class="Cafeteria-box animado">
+        <img src="imagenes/2022--Copas--Lanchita.webp" alt="Cajita-yo-juego" class="Cafeteria-img">
+        <div class="cafeteria-texto">
+          <h4>Lanchita de 2 gustos</h4>
+          <ul>
+            <li>Sabores a elección</li>
+
+          </ul>       
+          <p class="precio">$4500</p>
+        </div>
+      </div>
+
+      <!-- Producto 11 -->
+      <div class="Cafeteria-box animado">
+        <img src="imagenes/Cajita-yo-juego.webp" alt="Cajita-yo-juego" class="Cafeteria-img">
+        <div class="cafeteria-texto">
+          <h4>Cajita Yo Juego</h4>
+          <ul>
+            <li>Cono Simple (Sabor a elección)</li>
+            <li>Rompecabezas</li>
+            <li>Golosinas</li>
+
+          </ul>       
+          <p class="precio">$4500</p>
+        </div>
+      </div>
+
+    </section>
+
+    
+
+<!-- seccion Postres -->
+<section id="postres" class="Cafeteria animado">
+  <h2 class="titulo-cafeteria">Postres</h2>
+
+  <!-- Producto 1 -->
+  <div class="Cafeteria-box animado">
+    <img src="imagenes/chocopostre.webp" alt="chocopostre" class="Cafeteria-img">
+    <div class="cafeteria-texto">
+      <h4>Postre Chocopostre</h4>
+      <ul>
+   
+      <li>Helado de Dulce de Leche</li>
+      <li>Galletitas dulces de Chocolate trozadas</li>
+      <li>Salsa de Chocolate y helado de Chocolate</li>
+      <li>Decorado con copos de helado de Dulce de Leche</li>
+      <li>Baño de repostería con leche</li>
+      <li></li>
+      
+      </ul>       
+      <p class="precio">$16000</p>
+    </div>
+  </div>
+   <!-- Producto 2 -->
+   <div class="Cafeteria-box animado">
+    <img src="imagenes/Postre-Frutilla.webp" alt="Postre-Frutilla" class="Cafeteria-img">
+    <div class="cafeteria-texto">
+      <h4>Postre de Frutilla</h4>
+      <ul>
+      <li>Helado sabor Americana</li>
+      <li>Salsa de frutilla trituradas</li>
+      <li>Helado de crema de Frutillas</li>
+      <li>Decorado con copos de helado de Americana y salsa de frutillas</li>
+      
+      </ul>       
+      <p class="precio">$16000</p>
+    </div>
+  </div>
+  <!-- Producto 3 -->
+  <div class="Cafeteria-box animado">
+    <img src="imagenes/Postre-Mediterraneo.webp" alt="Postre-Mediterraneo" class="Cafeteria-img">
+    <div class="cafeteria-texto">
+      <h4>Postre Mediterraneo</h4>
+      <ul>
+      <li>Helado sabor vainilla</li>
+      <li>Siembra de galletitas dulces rellenas bañadas y merengue picado</li>
+      <li>Helado de Chocolate</li>
+      <li>Decorado con helado de Americana</li>
+      <li>Trozos de pasta de maní y baño de repostería con leche</li>
+      
+      </ul>       
+      <p class="precio">$16000</p>
+    </div>
+  </div>
+
+  <!-- Producto 4 -->
+  <div class="Cafeteria-box animado">
+    <img src="imagenes/Postre-Tiramisu.webp" alt="Postre-Tiramisu" class="Cafeteria-img">
+    <div class="cafeteria-texto">
+      <h4>Postre Tiramisú</h4>
+      <ul>
+      <li>Helado sabor tiramisú </li>
+      <li>Salsa de chocolate</li>
+      <li>Decorada con copos de helado de Chocolate</li>
+      <li>Baño de repostería con leche</li>
+      </ul>       
+      <p class="precio">$16000</p>
+    </div>
+  </div>
+
+  <!-- Producto 5 -->
+  <div class="Cafeteria-box animado">
+    <img src="imagenes/Bombon-escoces.webp" alt="Bombon-escoces" class="Cafeteria-img">
+    <div class="cafeteria-texto">
+      <h4>Bombón Escocés X8 Unidades</h4>
+      <ul>
+      <li>Helado sabor Americana</li>
+      <li>helado de Dulce de Leche relleno con dulce de leche</li>
+      <li>Cubierto con baño de repostería con leche y crocante de maní</li>
+      </ul>       
+      <p class="precio">$18000</p>
+    </div>
+  </div>
+    <!-- Producto 6 -->
+    <div class="Cafeteria-box animado">
+      <img src="imagenes/Bombon-escoces-blanco.webp" alt="Bombon-escoces-blanco" class="Cafeteria-img">
+      <div class="cafeteria-texto">
+        <h4>Bombón Escocés Blanco X8 Unidades</h4>
+        <ul>
+        <li>Helado sabor Americana y Dulce de Leche</li>
+        <li>Relleno con dulce de leche</li>
+        <li>Recubierto con baño de repostería blanco con leche y crocante de maní</li>
+        </ul>       
+        <p class="precio">$18000</p>
+      </div>
+    </div>
+    <!-- Producto 7 -->
+    <div class="Cafeteria-box animado">
+      <img src="imagenes/Almendrado.webp" alt="Almendrado" class="Cafeteria-img">
+      <div class="cafeteria-texto">
+        <h4>Postre Almendrado X8 Unidades</h4>
+        <ul>
+        <li>Helado sabor Almendrado recubierto con crocante de maní</li>
+        </ul>       
+        <p class="precio">$15000</p>
+      </div>
+    </div>
+    <!-- Producto 8 -->
+    <div class="Cafeteria-box animado">
+      <img src="imagenes/Bombon-suizo.webp" alt="Bombon-suizo" class="Cafeteria-img">
+      <div class="cafeteria-texto">
+        <h4>Bombón Suizo X8 Unidades</h4>
+        <ul>
+        <li>Helado de crema de Dulce de Leche y sabor Americana</li>
+        <li>Recubierto con baño de repostería con leche</li>
+      </ul>       
+        <p class="precio">$16000</p>
+      </div>
+    </div>
+    <!-- Producto 9 -->
+    <div class="Cafeteria-box animado">
+      <img src="imagenes/Barra-Cappuccino .webp" alt="Barra-Cappuccino" class="Cafeteria-img">
+      <div class="cafeteria-texto">
+        <h4>Barra Cappuccino X8 Unidades</h4>
+        <ul>
+        <li>Helado a la crema sabor Cappuccino con trocitos de Chocolate semi amargo</li>
+        <li>Relleno de dulce de leche</li>
+        <li>Recubierto con baño de repostería con leche</li>
+      </ul>       
+        <p class="precio">$15000</p>
+      </div>
+    </div>
+     <!-- Producto 10 -->
+     <div class="Cafeteria-box animado">
+      <img src="imagenes/Tricolor.webp" alt="Tricolor.jpg" class="Cafeteria-img">
+      <div class="cafeteria-texto">
+        <h4> Postre Tricolor X8 Unidades</h4>
+        <ul>
+        <li>Helado de crema sabor Americana, Frutilla y de Chocolate</li>
+      </ul>       
+        <p class="precio">$10500</p>
+      </div>
+    </div>
+    <!-- Producto 11 -->
+    <div class="Cafeteria-box animado">
+      <img src="imagenes/Palito-Bombon-x12.webp" alt="Palito-Bombon-x12" class="Cafeteria-img">
+      <div class="cafeteria-texto">
+        <h4>Palito de Bombón X12 Unidades</h4>
+        <ul>
+        <li>Helado de crema sabor Americana con baño de repostería con leche</li>
+      </ul>       
+        <p class="precio">$14000</p>
+      </div>
+    </div>
+     <!-- Producto 12 -->
+     <div class="Cafeteria-box animado">
+      <img src="imagenes/Palito-Frutilla-x14.webp" alt="Palito-Frutilla" class="Cafeteria-img">
+      <div class="cafeteria-texto">
+        <h4>Palito de Frutilla X14 Unidades</h4>
+        <ul>
+        <li>Helado de agua de frutilla</li>
+      </ul>       
+        <p class="precio">$9800</p>
+      </div>
+    </div>
+    <!-- Producto 13 -->
+    <div class="Cafeteria-box animado">
+      <img src="imagenes/Palito-DobleYo-x14-Sin-tacc.webp" alt="Palito-DobleYo-x14-Sin-tacc" class="Cafeteria-img">
+      <div class="cafeteria-texto">
+        <h4>Palito DobleYo X14 Unidades</h4>
+        <ul>
+        <li>Helado sabor Americana y helado sabor frutilla</li>
+      </ul>       
+        <p class="precio">$12000</p>
+      </div>
+    </div>
+
+
+    <!-- seccion Potes -->
+<section id="potes" class="Cafeteria animado">
+  <h2 class="titulo-cafeteria">Potes Envasados</h2>
+
+  <!-- Producto 1 -->
+  <div class="Cafeteria-box animado">
+    <img src="imagenes/Potes-1,5Kg-DdlGr,Bs,Fr,Tir.webp" alt="Potes-1,5Kg" class="Cafeteria-img">
+    <div class="cafeteria-texto">
+      <h4>Pote de 1,5Kg</h4>
+      <ul>
+      <li>Dulce de Leche Granizado</li>
+      <li>Banana Split</li>
+      <li>Frutilla c/salsa</li>
+      <li>Tiramisú</li>
+      </ul>       
+      <p class="precio">$18800</p>
+    </div>
+  </div>
+  <!-- Producto 2 -->
+  <div class="Cafeteria-box animado">
+    <img src="imagenes/Potes-1,5Kg-Gr,Fr,Ddl,Lp.webp" alt="Potes-1,5Kg" class="Cafeteria-img">
+    <div class="cafeteria-texto">
+      <h4>Pote de 1,5Kg</h4>
+      <ul>
+      <li>Granizado</li>
+      <li>Dulce de Leche</li>
+      <li>Frutilla c/salsa</li>
+      <li>Lemon Pie</li>
+      </ul>       
+      <p class="precio">$18800</p>
+    </div>
+  </div>
+  <!-- Producto 3 -->
+  <div class="Cafeteria-box animado">
+    <img src="imagenes/Potes-1,5Kg-Cc,Ddl,Sf,Ch.webp" alt="Potes-1,5Kg" class="Cafeteria-img">
+    <div class="cafeteria-texto">
+      <h4>Pote de 1,5Kg</h4>
+      <ul>
+      <li>Cookies & Cream</li>
+      <li>Dulce de Leche</li>
+      <li>Super Flan</li>
+      <li>Chocolate</li>
+      </ul>       
+      <p class="precio">$18800</p>
+    </div>
+  </div>
+   <!-- Producto 4 -->
+   <div class="Cafeteria-box animado">
+    <img src="imagenes/light.webp" alt="light" class="Cafeteria-img">
+    <div class="cafeteria-texto">
+      <h4>Light(Sin azucar) 1/2kg</h4>
+      <ul>
+      <li>Chocolate</li>
+      <li>Frutilla</li>
+      <li>Americana</li>
+      </ul>       
+      <p class="precio">$9000</p>
+    </div>
+  </div>
+
+
+    <!-- seccion sabores-->
+
+    <section id="sabores" class="sabores animado" >
+      <h2>Sabores de Helado</h2>
+    
+      <div class="filtro-sabores">
+        <button data-categoria="todos" class="filtro-btn activo">Todos</button>
+        <button data-categoria="chocolate" class="filtro-btn">Chocolates</button>
+        <button data-categoria="dulce de leche" class="filtro-btn">Dulces de leche</button>
+        <button data-categoria="crema" class="filtro-btn">Cremas</button>
+        <button data-categoria="frutales" class="filtro-btn">Frutales al agua</button>
+        <button data-categoria="alcohol" class="filtro-btn">Con alcohol</button>
+        <button data-categoria="nuevos" class="filtro-btn">Nuevos</button>
+      </div>
+    
+      <div class="sabores-grid animado" >
+        <!--  CHOCOLATES -->
+        <div class="sabor-item animado"  data-categoria="chocolate">
+          <h4>Chocolate</h4>
+          <p> Helado de crema elaborado con leche, azúcar y cacao.</p>
+        </div>
+      
+        <div class="sabor-item animado" data-categoria="chocolate">
+          <h4>Chocolate amargo</h4>
+          <p>Base de helado de chocolate amargo.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="chocolate">
+          <h4>Chocolate blanco</h4>
+          <p>Helado de crema, con chocolate blanco y manteca de cacao.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="chocolate">
+          <h4>Chocolate con almendras</h4>
+          <p> Helado de chocolate, con almendras tostadas.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="chocolate">
+          <h4>Chocolate con nuez</h4>
+          <p>Helado de chocolate, sembrado con nueces.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="chocolate">
+          <h4>Chocolate explosivo</h4>
+          <p>Con masitas de chocolate rellenas y dulce de leche heladero.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="chocolate">
+          <h4>Chocolate mantecol</h4>
+          <p>Helado de chocolate, sembrado con trozos de mantecol.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="chocolate">
+          <h4>Chocolate rocher</h4>
+          <p>Helado de chocolate y avellanas, con chocolate y trozos de avellanas.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="chocolate">
+          <h4>Chocolate con frutos rojos</h4>
+          <p>Helado de chocolate semiamargo, con frutos del bosque.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="chocolate">
+          <h4>Chocolate triple</h4>
+          <p>Chocolate semiamargo con granizado de chocolate blanco y negro.</p>
+        </div>
+ 
+        <!--  DULCE DE LECHE -->
+
+        <div class="sabor-item animado" data-categoria="dulce de leche">
+          <h4>Dulce de leche</h4>
+          <p>Crema helada a base de dulce de leche heladero.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="dulce de leche">
+          <h4>Dulce de leche bombón</h4>
+          <p>Helado de dulce de leche, sembrado con trozos de bombones.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="dulce de leche">
+          <h4>Dulce de leche con almendras caramelizadas</h4>
+          <p>Helado de dulce de leche con almendras tostadas caramelizadas.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="dulce de leche">
+          <h4>Dulce de leche granizado</h4>
+          <p>Helado de dulce de leche con granizado de chocolate con leche.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="dulce de leche">
+          <h4>Dulce de leche split</h4>
+          <p>Helado de dulce de leche combinado con dulce de leche heladero.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="dulce de leche">
+          <h4>Dulce de leche nougat</h4>
+          <p>Helado de dulce de leche con una tentadora pasta de avellanas, granizado con una increible fusión entre chocolate blanco y pasta de avellanas.
+          </p>
+        </div>
+        <div class="sabor-item animado" data-categoria="dulce de leche">
+          <h4>Havachoc</h4>
+          <p>Helado de dulce de leche con sabor a alfajor, con granizado de chocolate.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="dulce de leche">
+          <h4>Chocotorta</h4>
+          <p>Helado de dulce de leche con siembra de trozos de galletitas de chocolate.
+          </p>
+        </div>
+
+      <!--  CREMAS -->
+
+        <div class="sabor-item animado" data-categoria="crema">
+          <h4>Americana</h4>
+          <p>Helado a base de crema chantilly.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="crema">
+          <h4>Ananá a la crema</h4>
+          <p>Helado de ananá a la crema con trozos de ananá al natural.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="crema">
+          <h4>Banana</h4>
+          <p>Helado de crema helada de banana, elaborado con fruta natural.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="crema">
+          <h4>Banana split</h4>
+          <p>Helado de banana combinado con dulce de leche heladero.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="crema">
+          <h4>Bananita</h4>
+          <p>Helado de vainilla con sabor a banana, con granizado de dulce de leche</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="crema">
+          <h4>Cereza a la crema</h4>
+          <p>Base de helado de cereza sembrado con cerezas al natural.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="crema">
+          <h4>Cereza negra</h4>
+          <p>Helado sabor marraschino con cerezas.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="crema">
+          <h4>Crema del cielo</h4>
+          <p>Helado de crema americana de color celeste.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="crema">
+          <h4>Crema de frutillas</h4>
+          <p>Helado de crema de frutillas con pulpa de frutillas naturales.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="crema">
+          <h4>Crema de higos</h4>
+          <p>Helado de vainilla, sembrado con higos naturales en almíbar.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="crema">
+          <h4>Crema de limón</h4>
+          <p>Helado de crema de limón, elaborado con fruta natural.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="crema">
+          <h4>Coco</h4>
+          <p>Helado de crema helada de coco, elaborada con fruta natural.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="crema">
+          <h4>Cookies & Cream</h4>
+          <p> Helado de crema americana con galletitas de chocolate trozadas.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="crema">
+          <h4>Durazno a la crema</h4>
+          <p>Helado de durazno con trozos de duraznos al natural.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="crema">
+          <h4>Flan</h4>
+          <p>Helado de vainilla, combinado con caramelo.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="crema">
+          <h4>Frutilla a la crema</h4>
+          <p>Helado de crema americana, con frutillas tiernizadas en azúcar.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="crema">
+          <h4>Frutos del bosque</h4>
+          <p>Helado de crema americana con salsa de frutos del bosque.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="crema">
+          <h4>Granizado</h4>
+          <p>Helado de crema americana, con granizado de chocolate con leche.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="crema">
+          <h4>Lemon pie</h4>
+          <p>Helado de limón a la crema, con trozos de merengue y crema de limón.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="crema">
+          <h4>Mascarpone con frutos rojos</h4>
+          <p>Helado de americana, con queso mascarpone y frutos del bosque.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="crema">
+          <h4>Menta granizada</h4>
+          <p>Helado de crema saborizado con menta y granizado de chocolate.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="crema">
+          <h4>Mousse de melón con arandanos</h4>
+          <p>Helado de crema de melón con salsa de arandanos.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="crema">
+          <h4>Súper flan</h4>
+          <p>Helado de crema de vainilla, con caramelo y dulce de leche heladero.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="crema">
+          <h4>Tramontana</h4>
+          <p>Helado de crema americana con galletitas de chocolate y dulce de leche.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="crema">
+          <h4>Vainilla</h4>
+          <p>Helado de crema a base de huevos y crema de leche, saborizado con vainillina.</p>
+        </div>
+
+
+        <!--  FRUTALES AL AGUA -->
+        <div class="sabor-item animado" data-categoria="frutales">
+          <h4>Ananá</h4>
+          <p>Helado de agua elaborado con ananá natural.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="frutales">
+          <h4>Frambuesa</h4>
+          <p>Helado de agua con salsa de Frambuesa.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="frutales">
+          <h4>Frutilla</h4>
+          <p>Helado de agua elaborado con frutillas naturales.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="frutales">
+          <h4>Limón</h4>
+          <p>Helado de agua elaborado con concentrado natural del limón.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="frutales">
+          <h4>Limón con frutilla</h4>
+          <p>Base de helado de limón, combinado con frutillas naturales.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="frutales">
+          <h4>Manzana verde</h4>
+          <p>Helado de agua elaborado con concentrado natural de manzanas verdes.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="frutales">
+          <h4>Maracuyá</h4>
+          <p>Helado de agua elaborado con salsa de maracuyá natural.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="frutales">
+          <h4>Naranja</h4>
+          <p>Helado de agua elaborado con concentrado natural de naranjas.</p>
+        </div>
+
+         <!--  CON ALCOHOL -->
+
+        <div class="sabor-item animado" data-categoria="alcohol">
+          <h4>Chocolate YO</h4>
+          <p>Helado de chocolate, con granizado de chocolate con leche y oporto.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="alcohol">
+          <h4>Crema rusa</h4>
+          <p>Helado de crema, combinado con oporto y sembrado con nueces.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="alcohol">
+          <h4>Quinotos al whisky</h4>
+          <p>Helado de vainilla, con quinotos trozados macerados en whisky.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="alcohol">
+          <h4>Pasas al rhum</h4>
+          <p>Helado de vainilla, sembrado con pasas de uvas maceradas al rhum.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="alcohol">
+          <h4>Sambayón</h4>
+          <p>Helado de crema, elaborado con yema de huevo, crema de leche y oporto.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="alcohol">
+          <h4>Sambayón granizado</h4>
+          <p>Helado de sambayón, con granizado de chocolate con leche.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="alcohol">
+          <h4>Sopa inglesa</h4>
+          <p>Helado de crema de vainilla, con masitas vainillas embebidas en licor de huevo.</p>
+        </div>
+        <div class="sabor-item animado" data-categoria="alcohol">
+          <h4>Tiramisú</h4>
+          <p>Helado de vainilla saborizado con café con masitas vainillas embebidas en oporto.</p>
+        </div>
+
+        <!--  NUEVOS -->
+        <div class="sabor-item animado" data-categoria="nuevos">
+          <h4>MIX de crema del cielo Y frutilla</h4>
+        </div>
+        <div class="sabor-item animado" data-categoria="nuevos">
+          <h4>MIX de chocolate y banana split</h4>
+        </div>
+        <div class="sabor-item animado" data-categoria="nuevos">
+          <h4>MIX de chocolate y frutilla</h4>
+        </div>
+        <div class="sabor-item animado" data-categoria="nuevos">
+          <h4>MIX de chocolate y lemon pie</h4>
+        </div>
+        <div class="sabor-item animado" data-categoria="nuevos">
+          <h4>MIX de dulce de leche Y coco split</h4>
+        </div>
+        <div class="sabor-item animado" data-categoria="nuevos">
+          <h4>MIX de dulce de leche Y coco split</h4>
+        </div>
+        <div class="sabor-item animado" data-categoria="nuevos">
+          <h4>NUEVO dulce de leche y brownie</h4>
+        </div>
+      
+        <!-- seguí agregando más con su data-categoria -->
+      </div>
+    </section>
+    
+    <script>
+      const botones = document.querySelectorAll(".filtro-btn");
+      const sabores = document.querySelectorAll(".sabor-item");
+    
+      botones.forEach(boton => {
+        boton.addEventListener("click", () => {
+          document.querySelector(".filtro-btn.activo")?.classList.remove("activo");
+          boton.classList.add("activo");
+    
+          const categoria = boton.dataset.categoria;
+    
+          sabores.forEach(sabor => {
+            sabor.style.display = categoria === "todos" || sabor.dataset.categoria === categoria ? "block" : "none";
+          });
+        });
+      });
+    </script>
+    
+    
+    
+
+
+       <!-- flecha arriba-->
+
+    <script>
+      const animados = document.querySelectorAll('.animado');
+    
+      function mostrarAnimados() {
+        animados.forEach(el => {
+          const top = el.getBoundingClientRect().top;
+          const alturaPantalla = window.innerHeight;
+    
+          if (top < alturaPantalla - 100) {
+            el.classList.add('visible');
+          }
+        });
+      }
+    
+      window.addEventListener('scroll', mostrarAnimados);
+      window.addEventListener('load', mostrarAnimados); // por si ya están en pantalla
+    </script>
+
+
+   <!-- seccion buscador-->
+
+   <script>
+    const buscador = document.getElementById("buscador");
+    const secciones = document.querySelectorAll("section.Cafeteria, section.promos, section.sabores, section.Acompañamiento");
+    const titulos = document.querySelectorAll(".titulo-cafeteria, .titulo-promo, .titulo-acompañamiento, .titulo-sabores");
+  
+    buscador.addEventListener("input", () => {
+      const texto = buscador.value.toLowerCase().trim();
+      let hayResultados = false;
+  
+      if (texto === "") {
+        // 🔹 Si el buscador está vacío, mostramos todo otra vez
+        secciones.forEach(sec => (sec.style.display = "block"));
+        titulos.forEach(tit => (tit.style.display = "block"));
+        return;
+      }
+  
+      // 🔹 Recorremos todas las secciones
+      secciones.forEach(sec => {
+        const productos = sec.querySelectorAll(".Cafeteria-box, .sabor-item, .promo-box");
+        let hayCoincidencia = false;
+  
+        productos.forEach(prod => {
+          const match = prod.textContent.toLowerCase().includes(texto);
+          prod.style.display = match ? "flex" : "none";
+          if (match) hayCoincidencia = true;
+        });
+  
+        // 🔹 Si hay coincidencia, mostramos solo esa sección
+        sec.style.display = hayCoincidencia ? "block" : "none";
+        if (hayCoincidencia) hayResultados = true;
+      });
+  
+      // 🔹 Ocultamos todos los títulos mientras hay búsqueda
+      titulos.forEach(tit => {
+        tit.style.display = texto ? "none" : "block";
+      });
+    });
+  </script>
+  
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  <section id="Contacto" class="Contacto animado"></section>
+
+  <footer class="footer">
+    <div class="footer-col">
+      <h4>Sucursales</h4>
+      <p>25 de Mayo 2012 (Santo Tomé)</p>
+      <p>Hernandarias 2327 (Santo Tomé)</p>
+    </div>
+  
+    <div class="footer-col">
+      <h4>Teléfonos</h4>
+      <a href="https://wa.me/3424412847" class="whatsapp">
+        <p>(342) 154 412847</p></a>
+      <a href="https://wa.me/3424437415" class="whatsapp">
+        <p>(342) 154 437415</p></a>
+    </a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Pedidos Online</h4>
+      <div class="pedix-footer">
+        <a href="https://pedix.app/yo-heladerias-santo-tome">
+          <img src="imagenes/pedix.webp" alt="Pedix">
+          <p>Hacé tu pedido por Pedix</p>
+        </a>
+      </div>
+    </div>
+  
+    <div class="footer-col">
+      <h4>Horarios</h4>
+      <p>Lunes a sábados: 09:00 - 01:00</p>
+      <p>Domingos: 10:00 - 01:00</p>
+      <h4>Seguinos</h4>
+      <!-- Podés agregar íconos de redes sociales después -->
+      <div class="redes">
+        <a href="https://www.instagram.com/yoheladerias.santotome/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <p>Nuestro Instagram</p>
+      </div>
+    </div>
+  </footer>
+  
+</body>
+</html>
+
