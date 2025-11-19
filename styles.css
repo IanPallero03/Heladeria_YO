@@ -1,3 +1,5 @@
+
+
 body {
   font-family: 'Lora', serif;
   background-color: #f2f2f2;
@@ -267,7 +269,7 @@ button.next:hover , button.prev:hover{
   color: white;
   padding: 0.4rem 0.8rem;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 5px;
   display: inline-block;
   margin: 0 auto;              /* <-- centra horizontalmente */
   font-weight: bold;
@@ -461,14 +463,10 @@ button.next:hover , button.prev:hover{
     max-width: 100px;
   }
 
-  .promo-texto,
-  .cafeteria-texto {
-    text-align: center;
-  }
 
   .promo-texto h3,
   .cafeteria-texto h4{
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -479,7 +477,7 @@ button.next:hover , button.prev:hover{
   background-color: #003366;
   color: white;
   padding: 0.2rem 0.5rem;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   font-size: 0.8rem;
   float: right;
 }
@@ -487,7 +485,7 @@ button.next:hover , button.prev:hover{
   background-color: #003366;
   color: white;
   padding: 0.2rem 0.5rem;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
   font-size: 0.8rem;
   float: right;
   margin-right: 0.5rem;
@@ -523,7 +521,7 @@ html {
   text-decoration: none;
   border-radius: 5rem;
   padding: 10px;
-  z-index: 1000;
+  z-index: 10000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -582,7 +580,7 @@ html {
   max-width: 400px;
   padding: 0.75rem 0.5rem;
   border: 1px solid #ccc;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   font-size: 1rem;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   outline: none;
@@ -642,7 +640,7 @@ html {
 .filtro-btn {
   padding: 0.5rem 1rem;
   border: none;
-  border-radius: 20px;
+  border-radius: 5px;
   background-color: #e0e0e0;
   color: #003366;
   font-weight: 600;
@@ -837,6 +835,10 @@ html {
   margin: 0.4rem 0;
   font-size: 0.95rem;
 }
+.footer-col p:hover {
+  transition: transform 0.4s ease;
+  transform: scale(1.1);
+}
 .pedix-footer {
   margin-top: 1.5rem;
 }
@@ -868,6 +870,99 @@ html {
 .whatsapp{
   color: white;
   text-decoration: none;
+}
+
+/* === BOTÓN FLOTANTE DE WHATSAPP CON MENÚ === */
+.whatsapp-menu {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* Botón principal */
+.boton-whatsapp {
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.boton-whatsapp:hover {
+  background-color: #1fac53;
+  transform: scale(1.1);
+}
+
+/* Opciones desplegables */
+.whatsapp-opciones {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  bottom: 160px; /* 🔼 sube el menú más arriba del botón */
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-opciones a {
+  background-color: #25D366;
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.whatsapp-opciones a:hover {
+  background-color: #1fac53;
+}
+
+/* Cuando se activa el checkbox, muestra las opciones */
+#toggle-whatsapp:checked + .boton-whatsapp + .whatsapp-opciones {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+/* === Responsivo === */
+@media (max-width: 768px) {
+  .whatsapp-menu {
+    bottom: 5px;
+    right: 20px;
+  }
+
+  .boton-whatsapp {
+    width: 50px;
+    height: 50px;
+    font-size: 1.7rem;
+  }
+
+  .whatsapp-opciones {
+    bottom: 140px; /* 🔽 ajusta un poco menos en pantallas pequeñas */
+    gap: 5px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .whatsapp-menu {
+    bottom: 5px;
+    right: 45px;
+  }
 }
 
 
