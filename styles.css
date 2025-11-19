@@ -1,5 +1,3 @@
-
-
 body {
   font-family: 'Lora', serif;
   background-color: #f2f2f2;
@@ -381,6 +379,15 @@ button.next:hover , button.prev:hover{
 .promo-texto ul li {
   margin-bottom: 0.4rem;
 }
+.promo-box,
+.Cafeteria-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap !important; /* 👈 NO PERMITIR que salten de línea */
+    align-items: center;
+    gap: 1rem;
+}
+
 
 
 /* ---------- CAFETERIA ---------- */
